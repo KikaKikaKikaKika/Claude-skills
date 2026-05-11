@@ -3,6 +3,18 @@ name: design-critique
 description: Run this automatically before presenting ANY design output — UI screens, flows, components, wireframes, copy+layout combinations, or interaction specs. Review the planned design against Nielsen's 10 Usability Heuristics, fix all violations internally, then present only the resolved output. The person who requested the design should never see a version with heuristic violations.
 ---
 
+## Always run both
+
+This skill and `accessibility-review` run together — every time, on every design output, regardless of who requested it. Neither is optional.
+
+**Order:**
+1. Generate the design internally
+2. Run heuristic review (this skill) — fix all violations
+3. Run accessibility review (`accessibility-review` skill) — fix all violations
+4. Present only the fully resolved output with both review logs appended
+
+---
+
 ## When to run this skill
 
 Before presenting any design output, including:
@@ -21,11 +33,11 @@ Do NOT wait to be asked. Run this automatically.
 ## Process
 
 1. **Generate** the design output internally (do not show it yet)
-2. **Review** it against all 10 heuristics below
-3. **Fix** every violation found — revise the design internally
-4. **Repeat** until no violations remain
+2. **Run heuristic review** against all 10 heuristics below — fix every violation
+3. **Run accessibility review** (`accessibility-review` skill) — fix every WCAG 2.1 AA violation
+4. **Repeat** until both reviews pass cleanly
 5. **Present** the resolved design output
-6. **Append** a brief heuristic review log at the end (what was found and fixed)
+6. **Append** both review logs — heuristic review first, accessibility review second
 
 ---
 
