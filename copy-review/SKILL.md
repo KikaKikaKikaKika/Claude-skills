@@ -1,11 +1,16 @@
 ---
 name: copy-review
-description: Review copy against the content style guide. Use when asked to review, check, or audit text, copy, or content for style, grammar, tone, or clarity.
+description: Review and/or rewrite copy against the content style guide. Use when asked to review, check, audit, improve, fix, or rewrite any text, copy, or content for style, grammar, tone, or clarity.
 ---
 
-Review the following copy against the content style guide rules below. For each issue found, quote the problematic text, name the rule it violates, and provide a corrected version.
+## How to use
 
-Text to review: $ARGUMENTS
+Detect intent from $ARGUMENTS or the user's phrasing:
+
+- **"Review / check / audit / is this OK?"** → run a review only (list issues, no rewrite)
+- **"Rewrite / fix / improve / clean up"** → rewrite only (return improved copy + changes made)
+- **"Review and rewrite / both"** → review first, then rewrite
+- **Unclear** → do both: review, then present the rewritten version
 
 ---
 
@@ -13,87 +18,93 @@ Text to review: $ARGUMENTS
 
 ### Voice & Tone
 - Professional, conversational, practical, genuine
-- Direct, savvy, clear
-- Speak with clarity; strive for expertise
-- Use "we" instead of "I" when writing as the company
-- Always refer to users as "you" — never use "my" or "I" (except for user consent/permissions: "I agree to…")
-- Use gender-neutral "they/their" instead of "she/her" or "he/his"
-- Avoid inserting the company name where possible; use "we" if necessary
+- Direct, savvy, clear — part of the team, not corporate
+- Use "we" for the company, "you" for the user
+- Gender-neutral: "they/their" instead of "she/her" or "he/his"
+- Avoid inserting the company name unnecessarily — use "we" if needed
 
 ### Core Principles
-- **Concise**: Every word must have a purpose. Under 30 words per sentence. No redundant or filler words.
-- **Scannable**: Short paragraphs (max 5–6 sentences). Most important info first.
-- **Consistent**: Use the same word throughout — don't swap for synonyms. Don't mix "your" and "my" in the same phrase.
-- **No jargon**: Use plain language, especially in error messages.
-- **Simple**: Write at ~sixth-grade level. Avoid long, complicated words (e.g., use "unclear" not "incomprehensible").
+- **Concise**: Every word has a purpose. Under 30 words per sentence. No filler, no redundancy.
+- **Scannable**: Short paragraphs (max 5–6 sentences). Most important information first.
+- **Consistent**: Same word throughout — don't swap for synonyms. Don't mix "your" and "my" in the same phrase.
+- **No jargon**: Plain language. Especially in error messages.
+- **Simple**: ~Sixth-grade reading level. Use "unclear" not "incomprehensible".
 - **No excessive adjectives**: Remove unnecessary or redundant adjectives.
-- **Present tense**: Avoid future tense ("Video will be downloaded" → "Download video").
-- **Active voice**: Subject does the action. Passive voice only when avoiding self-reference or the object is more important.
-- **Positive language**: Tell users what to do, not what they can't do ("To open a report, add a personal secret" not "You can't open a report if you don't have a personal secret").
-- **Inclusive**: Avoid gendered, prejudiced, or discriminatory language. Use "people/folks", "underrepresented groups", "people with disabilities", "they".
+- **Present tense**: "Download video" not "Video will be downloaded".
+- **Active voice**: Subject does the action. Passive only to avoid self-reference or when object matters more.
+- **Positive framing**: Tell users what to do, not what they can't. "To open a report, add a personal secret" not "You can't open a report without a secret".
+- **Inclusive**: "they/them", "people/folks", "underrepresented groups", "people with disabilities". No gendered or discriminatory language.
 
 ### US Spelling
-- Use "z": realize, organization, utilize, customize, personalize
-- Use "ense": license, offense
-- Use "og": analog, catalog, dialog
-- No double-l: modeling, paneled (not modelling, panelled)
+- "z" spellings: realize, organize, customize, personalize
+- "ense": license, offense
+- "og": dialog, catalog, analog
+- No double-l: modeling, paneled
 - Specific words: color, center, while, fulfill
 
 ### Punctuation
-- **Ampersands**: Never use "&" — spell out "and"
-- **Oxford comma**: Required in lists of 3+ items ("red, white, and blue")
-- **Exclamation marks**: Avoid — only for truly exciting moments, max one per page
-- **Question marks**: Avoid where possible; reword as affirmative statements
-- **Periods**: Use in full sentences, body text, help text, descriptions. Do NOT use in buttons, headings, notifications, toasts, placeholders, nav items, tooltips, radio/checkbox text
-- **Colons**: Avoid in sentences; use to introduce bulleted lists
-- **Semicolons**: Avoid if possible
-- **Ellipses**: Avoid in UI text; always use the ellipsis character "…" not three periods
-- **Em dash "—"**: Use with spaces on either side ( — ); use sparingly
-- **En dash "–"**: Use for ranges (50–100), no spaces
-- **Hyphen "-"**: Use to concatenate words (one-time password)
-- **Double quotes**: For defining words or quoting text; commas/periods go inside quotes
+- Spell out "and" — never use "&"
+- Oxford comma required in lists of 3+ ("red, white, and blue")
+- No exclamation marks unless truly warranted — max one per page
+- Reword questions as affirmative statements where possible
+- **Periods — use in**: complete sentences, body text, descriptions, help text under form fields
+- **Periods — never use in**: buttons, headings, notifications, toasts, tooltips, nav items, placeholders, radio/checkbox text
+- Introduce bulleted lists with a colon
+- Use "…" (ellipsis character), not three periods
+- Em dash with spaces on both sides: word — word
+- En dash for ranges, no spaces: 50–100
+- Avoid semicolons
+- No ampersands
 
 ### Capitalization
-- **Headings**: Sentence case — capitalize first word and proper nouns only (not every word)
-- **Buttons**: Sentence case
-- **Product/feature names**: Capitalize only if unique and marketable; generic terms lowercase
-- **After slashes**: Lowercase ("ZIP/postal code required")
-- **Lists**: Each item starts with a capital letter
+- Sentence case for headings and buttons (first word + proper nouns only)
+- Lowercase after slashes: "ZIP/postal code"
+- List items start with a capital letter
+- Product/feature names: capitalize only if unique and marketable; generic terms lowercase
 
 ### Articles
-- **Headers/Titles**: Avoid articles (a, an, the) — "Create users" not "Create a user"
-- **UI copy**: Avoid articles except in full sentences ("Add secret" not "Add a secret")
+- Omit articles (a, an, the) in headings and UI labels
+- Use articles normally in body copy and full sentences
 
-### Abbreviations
-- Don't use internal abbreviations in customer-facing copy
+### Numbers & Abbreviations
+- Zero–nine: spell out (unless technical or precise)
+- 10+: use numerals
 - Spell out full words: "application" not "app"
 - Spell out acronyms on first use: "Direct Data Mapping (DDM)", then "DDM"
-- Number abbreviations: no space between number and abbreviation (230M, not 230 M); capitalize K, M, B
-- Avoid abbreviating large numbers unless space-limited
-
-### Numbers
-- Write out zero to nine as words unless technical/precise
-- Use numerals for 10 and above
-- Use commas for thousands: 100,000
-- Don't start a sentence with a numeral
-- Ordinal numbers in text: spell out (first, twelfth, forty-third); use 11th, 12th, etc. for 11+
-- Percentages: numeral + % with no space (12%)
-- Decimal separator: period "." with zero before decimals less than 1 (0.6)
-
-### Date & Time
-- Time: numeral + space + AM/PM (3:00 PM), no leading zero
-- Dates: Jan 6, 2022 or January 6, 2022 (spell out if space allows)
-- Numerical dates only if necessary: YYYY-MM-DD format
-- No 24-hour clock
+- Don't start sentences with numerals
 
 ---
 
 ## Output Format
 
+### Review only
 List each issue found:
 
 **Issue**: [quote the problematic text]
 **Rule**: [which rule it violates]
 **Fix**: [corrected version]
 
-If no issues are found, say so and briefly confirm what the copy does well.
+If no issues found, say so and confirm what the copy does well.
+
+---
+
+### Rewrite only
+
+**Rewritten copy:**
+[The rewritten text]
+
+**Changes made:**
+- [Brief bullet per change and why]
+
+---
+
+### Both (review + rewrite)
+
+**Issues found:**
+[Issue list as above]
+
+**Rewritten copy:**
+[Full rewritten version with all issues resolved]
+
+**Changes made:**
+- [Brief bullet per change]
