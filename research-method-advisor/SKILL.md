@@ -77,10 +77,22 @@ Use this framework to select the right method:
 Once the method is confirmed, generate a complete, ready-to-use draft. Use the templates below as a base and tailor everything to the specific problem described.
 
 Read the relevant reference file for full template guidance:
-- Generative interviews → [references/interview-guide.md](references/interview-guide.md)
-- Usability testing → [references/usability-test-plan.md](references/usability-test-plan.md)
-- Surveys → [references/survey-template.md](references/survey-template.md)
-- Other methods → use the universal structure below
+
+| Method | Reference file |
+|---|---|
+| Generative interviews | [references/interview-guide.md](references/interview-guide.md) |
+| Usability testing (moderated + unmoderated) | [references/usability-test-plan.md](references/usability-test-plan.md) |
+| Surveys (incl. NPS, CSAT, SUS) | [references/survey-template.md](references/survey-template.md) |
+| Contextual inquiry | [references/contextual-inquiry.md](references/contextual-inquiry.md) |
+| Diary study | [references/diary-study.md](references/diary-study.md) |
+| Card sorting (open, closed, hybrid) | [references/card-sorting.md](references/card-sorting.md) |
+| Tree testing | [references/tree-testing.md](references/tree-testing.md) |
+| Concept testing | [references/concept-testing.md](references/concept-testing.md) |
+| Expert review / cognitive walkthrough | [references/expert-review.md](references/expert-review.md) |
+| Guerrilla testing | [references/guerrilla-testing.md](references/guerrilla-testing.md) |
+| A/B testing | [references/ab-testing.md](references/ab-testing.md) |
+| Analytics review | [references/analytics-review.md](references/analytics-review.md) |
+| Co-design workshop | [references/co-design-workshop.md](references/co-design-workshop.md) |
 
 ### Universal Draft Structure
 
