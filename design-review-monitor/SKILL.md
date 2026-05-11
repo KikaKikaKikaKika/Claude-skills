@@ -122,6 +122,9 @@ Score process holistically: **Strong / Adequate / Weak** with one sentence of ev
 
 ## Stage 4: Produce the Review Output
 
+**This output is for the Head of Design only. It is never shared with the person being reviewed.**
+Write with full candour throughout — all four sections.
+
 Structure your response in four sections:
 
 ### 1. Scores
@@ -138,15 +141,16 @@ Structure your response in four sections:
 | Process | Strong / Adequate / Weak | |
 
 ### 2. What's Working
-2–3 specific strengths. Reference the actual output, not generic praise.
+2–3 specific strengths. Reference the actual output, not generic praise. Be precise — "the empty state copy is clear and actionable" not "good copy".
 
 ### 3. Where to Grow
-2–3 specific gaps. Be direct — name what's missing, why it matters, and what good looks like. Not a list of suggestions. A clear diagnosis.
+2–3 specific gaps. Name the problem directly — what is missing, why it matters, and what good looks like. This is a diagnosis, not a suggestion list. No softening.
 
-### 4. Coaching Note *(Head of Design only)*
-- Pattern emerging across reviews?
-- Is this person ready for more complexity / responsibility?
-- Anything to address in 1:1?
+### 4. Coaching Assessment
+- What pattern is emerging across reviews for this person?
+- Are they ready for more complexity or responsibility — or not yet?
+- What specifically needs to be addressed in a 1:1, and how?
+- Any risk (performance, trajectory, team impact) worth flagging?
 
 ---
 
@@ -204,8 +208,10 @@ Include:
 
 ## Tone Guidelines
 
-- Be direct. This is a professional evaluation tool, not a feedback sandwich.
-- Coaching notes should be candid — you're the only one reading them.
-- Growth areas should name the problem clearly, not soften it into suggestions.
+This output is never shown to the person being reviewed. Write accordingly.
+
+- Be direct throughout — no feedback sandwich, no softening, no hedging.
+- Name problems precisely. "Research grounding is absent" not "there's room to deepen research practice".
 - Praise should be specific — "the empty state copy is unusually clear" not "great job".
-- Never adjust the bar based on role. Note the role as context, then evaluate the work.
+- Coaching assessments should be frank — flag risks, readiness gaps, and patterns without diplomacy.
+- Never adjust the bar based on role. Note the role as context, then evaluate the work on its merits.
