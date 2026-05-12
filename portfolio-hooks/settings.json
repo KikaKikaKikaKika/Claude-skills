@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "open /Users/kristinahergottova/Downloads/Portofolio_src/index.html"
+          },
+          {
+            "type": "command",
+            "command": "echo '⚠️  COPY REVIEW: Text content was changed. Run copy-review skill to check against style guide before deploying.'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'netlify.*deploy\\|deploy.*netlify'; then echo '🔍 VERSION CHECK: Comparing local file with live site...' && curl -s https://kristinadesign.netlify.app | md5 > /tmp/live_site.md5 && md5 /Users/kristinahergottova/Downloads/Portofolio_src/index.html > /tmp/local_site.md5 && if diff /tmp/live_site.md5 /tmp/local_site.md5 > /dev/null 2>&1; then echo '⚠️  WARNING: Local file matches live site — no changes detected. Deploy cancelled.' && exit 1; else echo '✅ Files differ — safe to deploy.' && echo '🔒 DESIGN APPROVAL: Has design-approval been run? Reply yes to proceed or no to cancel.' ; fi; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '♿ ACCESSIBILITY REMINDER: If design changes were made, run accessibility-review before approving or deploying.'"
+          }
+        ]
+      }
+    ]
+  }
+}
