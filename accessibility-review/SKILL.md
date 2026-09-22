@@ -161,6 +161,25 @@ Run alongside `design-critique`. Both must complete before output is shown.
 
 ---
 
+## 8. SEO Overlap — Accessibility Criteria That Also Affect Rankings
+
+These criteria matter for both WCAG compliance and search engine performance. When fixing them, note the SEO benefit in the review log.
+
+| Criterion | Accessibility rule | SEO impact |
+|---|---|---|
+| Heading hierarchy | Single H1, logical H2→H3 order | Google uses heading structure to understand page content and rank sections |
+| Alt text (SC 1.1.1) | Descriptive alt on meaningful images | Google's image crawler reads alt text for image search and page relevance |
+| `lang` attribute | `<html lang="...">` set correctly | Tells search engines the page language — affects which market the page ranks in |
+| Semantic HTML | `<nav>`, `<main>`, `<article>`, `<section>` | Helps Google identify navigation, primary content, and content regions |
+| Descriptive link text (SC 2.4.6) | No "click here" or "learn more" alone | Anchor text is a direct ranking signal — descriptive links pass more value |
+| Page speed / lazy loading | Reduces unnecessary processing | Core Web Vitals (LCP, CLS) are ranking factors — faster pages rank higher |
+| Mobile usability (SC 2.5.5) | 44×44px touch targets | Google's mobile usability score penalises sites with tap targets that are too small |
+| `prefers-reduced-motion` | Suppress heavy animations for sensitive users | Reducing unnecessary animation improves Interaction to Next Paint (INP) Core Web Vital |
+
+**When both `accessibility-review` and `seo-review` run on the same page:** do not audit heading hierarchy and alt text twice. Note "validated by accessibility-review" in the SEO log for those criteria.
+
+---
+
 ## Output Format
 
 Present the final accessible design first. Then append:

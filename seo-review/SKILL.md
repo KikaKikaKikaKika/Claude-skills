@@ -1,15 +1,19 @@
-# SEO Review Protocol
+---
+name: seo-review
+description: Run on ANY web page, landing page, or content output before presenting it. Score before and after, apply all fixes, present both scores.
+user-invocable: true
+---
 
-Run this automatically on ANY web page, landing page, or content output before presenting it. Never skip. Never present a page that has not passed this review.
-
-## When to Trigger
+## When to Run
 
 - Any HTML page, website, or landing page is created or updated
 - A blog post, article, or content page is written
 - A user asks to "check SEO", "improve SEO", "audit SEO", or similar
 - A page is about to be deployed or published
 
-## Audit Framework — Rate Before & After
+---
+
+## Audit Framework — Rate Before and After
 
 Always score the page before changes, apply fixes, then score again after. Present both scores.
 
@@ -49,29 +53,53 @@ Always score the page before changes, apply fixes, then score again after. Prese
 - Alt text is descriptive and contextual (not keyword-stuffed)
 - Decorative images use `alt=""`
 - File names are human-readable (room-with-balcony.jpg not IMG_4392.jpg)
+- **Accessibility overlap:** also satisfies WCAG SC 1.1.1 — fix once, benefit twice
 
 ### 7. Heading Hierarchy
 - Single `<h1>` per page, contains primary keyword
 - Logical `h2` → `h3` nesting, no skipped levels
 - Headings describe content sections accurately
+- **Accessibility overlap:** also satisfies WCAG heading hierarchy — fix once, benefit twice
 
 ### 8. Technical Basics
-- `<html lang="...">` set correctly
+- `<html lang="...">` set correctly — affects which market the page ranks in
 - `<meta charset="UTF-8">` present
 - `<meta name="viewport">` present
 - Page has a `robots.txt` that allows crawling
 - Page is listed in `sitemap.xml`
 - No broken links to critical resources
+- **Accessibility overlap:** `lang` attribute also required by WCAG SC 3.1.1
 
-### 9. Page Speed & Core Web Vitals (flag only)
+### 9. Page Speed and Core Web Vitals (flag only)
 - Images use `loading="lazy"` where appropriate
 - Fonts use `display=swap`
 - No render-blocking resources if avoidable
+- **Accessibility overlap:** reducing heavy animations (`prefers-reduced-motion`) also improves Interaction to Next Paint (INP)
 
 ### 10. Content Quality
 - Primary keyword appears in title, h1, first paragraph, and meta description
 - Content answers what a user searching for this page actually wants
 - Internal links between related pages exist
+- Link anchor text is descriptive — no "click here" or "learn more" alone
+- **Accessibility overlap:** descriptive link text also satisfies WCAG SC 2.4.6
+
+---
+
+## Accessibility-SEO Overlap
+
+These items are audited by both `seo-review` and `accessibility-review`. When both skills run on the same page, do not audit them twice — note "validated by accessibility-review" in the SEO log.
+
+| Item | SEO criterion | Accessibility criterion |
+|---|---|---|
+| Heading hierarchy | Section 7 | WCAG heading hierarchy |
+| Image alt text | Section 6 | SC 1.1.1 |
+| `lang` attribute | Section 8 | SC 3.1.1 |
+| Descriptive link text | Section 10 | SC 2.4.6 |
+| Page speed / lazy loading | Section 9 | Reduced motion / INP |
+| Mobile usability | Core Web Vitals | SC 2.5.5 touch targets |
+| Semantic HTML (`<nav>`, `<main>`) | Helps Google identify regions | SC 1.3.1 info and relationships |
+
+---
 
 ## Scoring
 
@@ -90,6 +118,8 @@ Score each area 0–10. Calculate overall score as average. Present a table:
 | Content Quality | x/10 | x/10 |
 | **Overall** | **x/10** | **x/10** |
 
+---
+
 ## Output Requirements
 
 1. Show before score table
@@ -97,3 +127,4 @@ Score each area 0–10. Calculate overall score as average. Present a table:
 3. Apply all fixes
 4. Show after score table
 5. Note any items that require user input (e.g. real address, og:image URL, Google Search Console verification)
+6. Flag any items already validated by `accessibility-review` to avoid duplication
